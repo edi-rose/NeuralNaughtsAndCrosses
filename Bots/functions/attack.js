@@ -4,13 +4,13 @@ function attackRows(team, board){
        board[i].col == 0 &&
        board[i+1].teamName == team &&
        board[i+2].teamName == 'none'){
-         return board[i+2]
+         return i+2
     }
     else if(board[i].teamName == team &&
             board[i].col == 0 &&
             board[i+2].teamName == team &&
             board[i+1].teamName == 'none'){
-              return board[i+1]
+              return i+1
    }
  }
  return false
@@ -23,20 +23,20 @@ function attackCollumns(team, board){
        board[i].row == 0 &&
        board[i+3].teamName == team &&
        board[i+6].teamName == 'none'){
-        return board[i+6]
+        return i+6
 
       }
       else if(board[i].teamName == team&&
               board[i].row == 0&&
               board[i+6].teamName == team&&
               board[i+3].teamName == 'none'){
-                return board[i+3]
+                return i+3
               }
     else if(board[i].teamName == team &&
             board[i].row == 1 &&
             board[i+3].teamName == team &&
             board[i-3].teamName == 'none'){
-          return board[i-3]
+          return i-3
    }
   }
   return false
@@ -49,18 +49,18 @@ function attackDiagonal1(team, board) {
   if(board[0].teamName == team &&
      board[4].teamName == team &&
      board[8].teamName == 'none') {
-      return board[8]
+      return 8
     }
   else if(board[0].teamName == team &&
           board[8].teamName == team &&
           board[4].teamName == 'none'){
-            return board[4]
+            return 4
 
           }
   else if(board[4].teamName == team &&
           board[8].teamName == team &&
           board[0].teamName == 'none'){
-            return board[0]
+            return 0
           }
   else {
     return false
@@ -74,17 +74,17 @@ function attackDiagonal2(team, board) {
     if(board[2].teamName == team &&
       board[4].teamName == team &&
       board[6].teamName == 'none') {
-        return board[6]
+        return 6
       }
     else if(board[2].teamName == team &&
             board[6].teamName == team &&
             board[4].teamName == 'none'){
-              return board[4]
+              return 4
             }
     else if(board[4].teamName == team &&
             board[6].teamName == team &&
             board[2].teamName == 'none'){
-              return board[2]
+              return 2
             }
     else {
       return false

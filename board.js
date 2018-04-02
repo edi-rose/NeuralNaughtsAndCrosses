@@ -18,12 +18,10 @@ function randomizeBoard(board){
       if(cTurn <= nTurn){
         board[i].teamName = 'cross'
         cTurn ++
-        console.log('cTurn: ', cTurn)
       }
       else if(nTurn < cTurn){
         board[i].teamName = 'naught'
         nTurn ++
-        console.log('nTurn: ', nTurn)
       }
     }
   }
