@@ -12,7 +12,7 @@ function smartMove(team, board) {
       break
    }
 }
-  return false
+  return
 }
 
 //Gathers all the values of the cell's key value pairs
@@ -53,7 +53,7 @@ function checkLines(values, team, board){
     return true
   }
   else {
-    return false
+    return
   }
 }
 
@@ -75,7 +75,7 @@ function checkLine (lineType, unit, team, board){
     return true
   }
   else{
-    return false
+    return
   }
 }
 

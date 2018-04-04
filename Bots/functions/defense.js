@@ -21,7 +21,7 @@ function defendRows(team, board) {
               return i-1
             }
   }
-    return false
+    return
 }
 
 
@@ -49,7 +49,7 @@ function defendCollumns(team, board) {
             return i-3
    }
   }
-  return false
+  return
 }
 
 //untested
@@ -74,7 +74,7 @@ function defendDiagonal1(team, board) {
               return 0
             }
     else {
-      return false
+      return
     }
 }
 
@@ -99,7 +99,7 @@ function defendDiagonal2(team, board) {
               return 2
             }
     else {
-      return false
+      return
     }
 }
 
@@ -116,7 +116,7 @@ function defend(team, board) {
   else if(defendDiagonal2(team, board)){
     return defendDiagonal2(team, board)
   }
-  return false
+  return
 }
 
 function findEnemy(team){

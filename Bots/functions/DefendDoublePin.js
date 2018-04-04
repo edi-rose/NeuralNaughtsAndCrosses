@@ -10,7 +10,7 @@ function defendPin(board) {
             return board[1]
           }
   else {
-    return false
+    return
   }
 }
 

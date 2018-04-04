@@ -13,7 +13,7 @@ function attackRows(team, board){
               return i+1
    }
  }
- return false
+ return
 }
 
 
@@ -39,7 +39,7 @@ function attackCollumns(team, board){
           return i-3
    }
   }
-  return false
+  return
 }
 
 function attackDiagonal1(team, board) {
@@ -63,7 +63,7 @@ function attackDiagonal1(team, board) {
             return 0
           }
   else {
-    return false
+    return
   }
 }
 
@@ -87,7 +87,7 @@ function attackDiagonal2(team, board) {
               return 2
             }
     else {
-      return false
+      return
     }
 }
 
@@ -104,7 +104,7 @@ function attack(team, board) {
   else if(attackDiagonal2(team, board)){
     return attackDiagonal2(team, board)
   }
-  return false
+  return
 }
 
 module.exports = {
