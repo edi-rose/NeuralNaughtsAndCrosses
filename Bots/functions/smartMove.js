@@ -8,8 +8,7 @@ function smartMove(team, board) {
     let values= getValues(board[i])
         //lines is an array of the different col, row, and diagonal values of each cell
     if(checkLines(values, team, board)){
-      console.log('pin prevented')
-      return board[i]
+      return i
       break
    }
 }

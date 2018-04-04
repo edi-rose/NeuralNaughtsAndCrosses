@@ -18,7 +18,7 @@ function crossMove(board){
           return board
         }
         else if(smartMove('naught', board)){
-          board[smartMove('cross', board)].teamName ='cross'
+          board[smartMove('naught', board)].teamName ='cross'
           return board
         }
       else {

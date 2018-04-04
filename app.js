@@ -1,6 +1,11 @@
 const brain = require('brain.js')
 const crossMove = require('./Bots/botMovesReact')
-const boards = requre('./randomizer')
+const makeBoards = require('./randomizer')
+const board = require('./board')
+
+let boards = makeBoards(5, board)
+
+console.log(crossMove(boards[0]))
 
 const network = new brain.NeuralNetwork()
 

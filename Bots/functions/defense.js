@@ -6,19 +6,19 @@ function defendRows(team, board) {
        board[i].col == 0 &&
        board[i+1].teamName == enemyTeam &&
        board[i+2].teamName == 'none'){
-        return board[i+2]
+        return i+2
         }
     else if(board[i].teamName == enemyTeam&&
             board[i].col == 0&&
             board[i+2].teamName == enemyTeam&&
             board[i+1].teamName == 'none'){
-            return board[i+1]
+            return i+1
     }
     else if(board[i].teamName == enemyTeam&&
             board[i].col == 1&&
             board[i+1].teamName == enemyTeam&&
             board[i-1].teamName == 'none'){
-              return board[i-1]
+              return i-1
             }
   }
     return false
@@ -33,20 +33,20 @@ function defendCollumns(team, board) {
        board[i].row == 0 &&
        board[i+3].teamName == enemyTeam &&
        board[i+6].teamName == 'none'){
-       return board[i+6]
+       return i+6
 
       }
       else if(board[i].teamName == enemyTeam&&
               board[i].row == 0&&
               board[i+6].teamName == enemyTeam&&
               board[i+3].teamName == 'none'){
-                return board[i+3]
+                return i+3
               }
     else if(board[i].teamName == enemyTeam &&
             board[i].row == 1 &&
             board[i+3].teamName == enemyTeam &&
             board[i-3].teamName == 'none'){
-            return board[i-3]
+            return i-3
    }
   }
   return false
@@ -61,17 +61,17 @@ function defendDiagonal1(team, board) {
     if(board[0].teamName == enemyTeam &&
        board[4].teamName == enemyTeam &&
        board[8].teamName == 'none') {
-        return board[8]
+        return 8
       }
     else if(board[0].teamName == enemyTeam &&
             board[8].teamName == enemyTeam &&
             board[4].teamName == 'none'){
-              return board[4]
+              return 4
             }
     else if(board[4].teamName == enemyTeam &&
             board[8].teamName == enemyTeam &&
             board[0].teamName == 'none'){
-              return board[0]
+              return 0
             }
     else {
       return false
@@ -86,17 +86,17 @@ function defendDiagonal2(team, board) {
     if(board[2].teamName == enemyTeam &&
       board[4].teamName == enemyTeam &&
       board[6].teamName == 'none') {
-        return board[6]
+        return 6
       }
     else if(board[2].teamName == enemyTeam &&
             board[6].teamName == enemyTeam &&
             board[4].teamName == 'none'){
-              return board[4]
+              return 4
             }
     else if(board[4].teamName == enemyTeam &&
             board[6].teamName == enemyTeam &&
             board[2].teamName == 'none'){
-              return board[2]
+              return 2
             }
     else {
       return false
