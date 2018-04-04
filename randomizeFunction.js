@@ -1,19 +1,21 @@
 function randomizeBoard(board, variable){
   let cTurn = 0
   let nTurn = 0
-  for (var i = 0; i < board.length; i++) {
+  let newBoard = board
+  for (var i = 0; i < newBoard.length -1 ; i++) {
+    newBoard[i] = {...board[i]}
     if(getNumber(variable) >= 10){
       if(cTurn <= nTurn){
-        board[i].teamName = 'cross'
+        newBoard[i].teamName = 'cross'
         cTurn ++
       }
       else if(nTurn < cTurn){
-        board[i].teamName = 'naught'
+        newBoard[i].teamName = 'naught'
         nTurn ++
       }
     }
   }
-  return board
+  return newBoard
 }
 
 function getNumber(variable){
