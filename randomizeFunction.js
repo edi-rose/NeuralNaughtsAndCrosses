@@ -1,3 +1,5 @@
+const board = require('./board')
+
 function randomizeBoard(board, variable){
   let cTurn = 0
   let nTurn = 0
