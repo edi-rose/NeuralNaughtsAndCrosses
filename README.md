@@ -1,4 +1,8 @@
 Hello and welcome to my Naughts and Crosses Neural Network (WIP)
+I am currently able to make reccomendations based on the networks output but it,
+is not particularly accurate. I need to build in the rules of naughts and crosses
+into the nets logic.
+
 
 I am using the naughts and crosses bot from a previous project to
 train a neural network to play the great game. I will be using the brain.js module.
