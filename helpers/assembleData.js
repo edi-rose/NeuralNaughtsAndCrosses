@@ -3,7 +3,7 @@ const getSquare = require('./getSquare')
 const makeBoards = require('../boardStuff/randomizer')
 const crossMove = require('../Bots/botMovesReact')
 
-let boards = makeBoards(1000)
+let boards = makeBoards(100)
 
 function getData() {
   let data =[]
@@ -15,7 +15,7 @@ function getData() {
   }
   return data
 }
-getData()
+
 let data =  getData()
 
 module.exports = data
