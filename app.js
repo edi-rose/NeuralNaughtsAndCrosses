@@ -10,4 +10,21 @@ network.train(data, {
 
 const result = network.run(testBoard)
 
-console.log(result)
+let resultArray = Object.values(result)
+
+function findMaxIDX(){
+  let currentMax = 0
+  let idxMax = 0
+  resultArray.map((x, idx) => {
+    //console.log(idx)
+    if(x > currentMax){
+      currentMax = resultArray[idx]
+      idxMax = idx
+    }
+  })
+  return idxMax
+}
+
+function getMove(idx){
+  return Object.keys(result)[idx]
+}
