@@ -1,7 +1,8 @@
 const brain = require('brain.js')
 const data = require('./helpers/assembleData')
 const testBoard = require('./boardStuff/testBoard')
-
+const findMaxIDX = require('./resultHandlers/getReccomendation').findMaxIDX
+const getMove= require('./resultHandlers/getReccomendation').getMove
 const network = new brain.NeuralNetwork([9, 9, 1])
 
 network.train(data, {
@@ -10,21 +11,6 @@ network.train(data, {
 
 const result = network.run(testBoard)
 
-let resultArray = Object.values(result)
+let Move = getMove(findMaxIDX(result), result)
 
-function findMaxIDX(){
-  let currentMax = 0
-  let idxMax = 0
-  resultArray.map((x, idx) => {
-    //console.log(idx)
-    if(x > currentMax){
-      currentMax = resultArray[idx]
-      idxMax = idx
-    }
-  })
-  return idxMax
-}
-
-function getMove(idx){
-  return Object.keys(result)[idx]
-}
+console.log(Move)
