@@ -1,18 +1,26 @@
-const board = require('./board')
+const checkForWin = require('../Bots/winChecker')
 
-function randomizeBoard(variable){
+function randomizeBoard(board, variable){
   let cTurn = 0
   let nTurn = 0
   let newBoard = board
-  for (var i = 0; i < newBoard.length - 1 ; i++) {
+  for (var i = 0; i < newBoard.length; i++) {
     newBoard[i] = {...board[i]}
-    if(getNumber(variable) >= 10){
+    if(getNumber(variable) >= 8){
       if(cTurn <= nTurn){
         newBoard[i].teamName = 'cross'
+        if(checkForWin('cross', newBoard)){
+          newBoard[i].teamName ='none'
+          continue
+        }
         cTurn ++
       }
       else if(nTurn < cTurn){
         newBoard[i].teamName = 'naught'
+        if(checkForWin('naught', newBoard)){
+          newBoard[i].teamName ='none'
+          continue
+        }
         nTurn ++
       }
     }

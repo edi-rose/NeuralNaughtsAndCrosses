@@ -1,19 +1,21 @@
 const makeInput = require('./boardToInput')
 const getSquare = require('./getSquare')
-const mockBoards = require('../boardStuff/mockBoards')
+const makeBoards = require('../boardStuff/randomizer')
 const crossMove = require('../Bots/botMovesReact')
+
+let boards = makeBoards(1000)
 
 function getData() {
   let data =[]
-  for (var i = 0; i < mockBoards.length; i++) {
+  for (var i = 0; i < boards.length; i++) {
     let obj = {}
-    obj['input'] = makeInput(mockBoards[i])
-    obj['output'] = getSquare(crossMove(mockBoards[i]))
+    obj['input'] = makeInput(boards[i])
+    obj['output'] = getSquare(crossMove(boards[i]))
     data.push(obj)
   }
   return data
 }
-
+getData()
 let data =  getData()
 
 module.exports = data
