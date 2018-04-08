@@ -2,7 +2,7 @@ var defend = require('./functions/defense.js').defend
 var attack = require('./functions/attack.js').attack
 var smartMove = require('./functions/smartMove.js').smartMove
 var defendPin = require('./functions/DefendDoublePin').defendPin
-var board = require('../board')
+var board = require('../boardStuff/board')
 
 function crossMove(board){
       if(attack('cross', board)){
