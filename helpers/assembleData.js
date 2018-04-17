@@ -1,9 +1,9 @@
 const makeInput = require('./boardToInput')
 const getSquare = require('./getSquare')
-const makeBoards = require('../boardStuff/randomizer')
+const makeBoards = require('../boardStuff/makeBoards')
 const crossMove = require('../Bots/botMovesReact')
 
-let boards = makeBoards(1000)
+let boards = makeBoards(1500)
 
 function getData() {
   let data =[]

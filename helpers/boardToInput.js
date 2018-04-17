@@ -1,5 +1,5 @@
-//naughts == -1 crosses = 1 none == 0
-
+//This function takes a board array and turns it into an array of -1's, 0's and 1's
+//for the network's data input.
 function boardToInput(board){
   let inputBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0]
   for (var i = 0; i < board.length; i++) {
