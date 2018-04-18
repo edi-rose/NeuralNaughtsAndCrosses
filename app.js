@@ -15,4 +15,4 @@ const result = network.run(testBoard)
 let networkMove = getMove(findMaxIDX(result), result)
 
 
-module.exports = networkMove
+module.exports = network

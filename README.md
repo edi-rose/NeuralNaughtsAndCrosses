@@ -3,7 +3,10 @@ I am currently able to make reccomendations based on the networks output but it,
 is not particularly accurate. I need to build in the rules of naughts and crosses
 into the nets logic.
 
-Eventually I want to have the Network play a game.
+Goals for this project:
+1.Have a user play against the network
+2.Have the network learn from it's previous games
+Make it work as naughts or crosses. 
 
 I am using the naughts and crosses bot from a previous project to
 train a neural network to play the great game. I will be using the brain.js module.
