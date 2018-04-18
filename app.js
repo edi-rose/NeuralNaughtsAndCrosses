@@ -12,6 +12,7 @@ network.train(data, {
 })
 
 const result = network.run(testBoard)
-let Move = getMove(findMaxIDX(result), result)
-console.log(findMaxIDX(result))
-console.log(Move)
+let networkMove = getMove(findMaxIDX(result), result)
+
+
+module.exports = networkMove
