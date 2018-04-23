@@ -3,7 +3,7 @@ const getSquare = require('./getSquare')
 const makeBoards = require('../boardStuff/makeBoards')
 const crossMove = require('../Bots/botMovesReact')
 
-let boards = makeBoards(1500)
+let boards = makeBoards(10000)
 
 function getData() {
   let data =[]
