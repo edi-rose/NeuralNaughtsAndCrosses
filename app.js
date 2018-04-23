@@ -10,15 +10,22 @@ const network = new brain.NeuralNetwork([9, 9, 1])
 function train(){
   network.train(data, {
     iterations:2000
-  })
-  return network.toJSON().layers[0]
+  }
+  )
+  return network.toJSON().layers[1]
 }
 
-let layers = train()[1]
+let layers = train()
 
-for (var i = 0; i < layers.length; i++) {
-  console.log(layers[i].weights)
+function logWeights(){
+  console.log('0', layers['0'].weights)
+  console.log('1', layers['1'].weights)
+  console.log('2', layers['2'].weights)
+  console.log('3', layers['3'].weights)
 }
+console.log(layers)
+//logWeights()
+
 
 const result = network.run(testBoard)
 let networkMove = getMove(findMaxIDX(result), result)
