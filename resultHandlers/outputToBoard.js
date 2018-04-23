@@ -1,7 +1,4 @@
-const json = require('../app')
 const testBoard = require('../boardStuff/board')
-
-console.log(json)
 
 function claimSquare(squareName){
   let returnValue = false
