@@ -55,12 +55,16 @@ class Board extends React.Component{
   }
   getCell(){
     let squareName = (getNetworkReccomendation(this.state.grid))
-    console.log('claim: ', squareName)
-    let board = this.state.grid
-    console.log(board.filter(layer => layer.filter(cell => cell.name == squareName)))
+    let cell
+    const {grid} = this.state
+    grid.forEach(row => row.forEach(c => {
+      if (c.name == squareName) {
+        cell = c
+      }
+    }))
+    return cell
   }
   claimSquare(cell, team){
-    console.log(cell)
     const {grid} = this.state
     let found
     grid.forEach(row => row.forEach(c => {
