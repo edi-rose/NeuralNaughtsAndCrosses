@@ -6,7 +6,7 @@ into the nets logic.
 Goals for this project:
 1.Have a user play against the network
 2.Have the network learn from it's previous games
-Make it work as naughts or crosses. 
+Make it work as naughts or crosses.
 
 I am using the naughts and crosses bot from a previous project to
 train a neural network to play the great game. I will be using the brain.js module.
@@ -19,6 +19,12 @@ In boardStuff folder you'll find how I am randomizing my boards to have as input
 The helpers folder helps me turn all that into a format brain.js can tolerate
 with the final creation of data being done in the 'assembleData' file.
 
-Next steps
-Turn the output back into something the board can recognize so that the square
-be claimed based on the reccomendation made by the network.
+Current state:
+
+The Network can currently make moves on a board against an opponent. Unfortunately
+the network doesn't know the rules and often tries to claim squares which are
+already taken. The network also is only trained to play as cross, I will need
+to create a whole other network to play as naughts.
+
+Once I can play full games against both a naughts and a crosses network, I will
+attempt to make the networks learn as you play against them.
