@@ -1,6 +1,10 @@
 
-function findMaxIDX(results){
-  let resultArray = Object.values(results)
+function getMove(output){
+   return matchIdxToName(getIdx(output), output)
+}
+
+function getIdx(output){
+  let resultArray = Object.values(output)
   let currentMax = 0
   let idxMax = 0
   resultArray.map((x, idx) => {
@@ -12,8 +16,8 @@ function findMaxIDX(results){
   return idxMax
 }
 
-function getMove(idx, results){
-  return Object.keys(results)[idx]
+function matchIdxToName(idx, output){
+  return Object.keys(output)[idx]
 }
 
-module.exports = {findMaxIDX: findMaxIDX, getMove: getMove}
+module.exports = getMove
