@@ -15,3 +15,11 @@ function train(){
   }
   )
 }
+
+train()
+let json = network.toJSON()
+let layers = json.layers
+console.log(layers)
+console.log(layers[0])
+console.log(layers[1])
+console.log(layers[2])
