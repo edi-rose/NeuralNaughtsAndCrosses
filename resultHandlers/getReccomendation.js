@@ -1,5 +1,5 @@
 
-function getMove(output){
+function getReccomendedSqaureName(output){
    return matchIdxToName(getIdx(output), output)
 }
 
@@ -20,4 +20,4 @@ function matchIdxToName(idx, output){
   return Object.keys(output)[idx]
 }
 
-module.exports = getMove
+module.exports = getReccomendedSqaureName
