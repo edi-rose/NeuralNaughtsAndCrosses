@@ -12,3 +12,5 @@ function claimSquare(squareName){
   console.log('newboard', newBoard)
   return newBoard
 }
+
+module.exports = claimSquare
