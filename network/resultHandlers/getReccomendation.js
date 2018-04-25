@@ -1,6 +1,6 @@
 
 function getReccomendedSqaureName(output){
-   return matchIdxToName(getIdx(output), output)
+   return matchIdxToName(sortOutput(output), output)
 }
 
 function getIdx(output){
@@ -16,8 +16,22 @@ function getIdx(output){
   return idxMax
 }
 
-function matchIdxToName(idx, output){
-  return Object.keys(output)[idx]
+function sortOutput(output){
+  let sortedArray = Object.values(output)
+  sortedArray.sort(function(a, b){return b - a})
+  return sortedArray
+}
+
+function matchIdxToName(Arr, output){
+  let Names = []
+  for (var i = 0; i < Arr.length; i++) {
+      Object.keys(output).forEach(function(key){
+        if(output[key] == Arr[i]){
+          Names.push(key)
+        }
+      })
+  }
+  return Names
 }
 
 module.exports = getReccomendedSqaureName
