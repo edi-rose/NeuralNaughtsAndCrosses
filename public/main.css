@@ -1,0 +1,68 @@
+.body {
+  width: 90%;
+  margin-left: 5%;
+  background-image: url('./images/image.jpg');
+}
+.token {
+  font-size: 50px;
+  margin-left: 26px;
+  margin-bottom: 3px
+}
+.game {
+  margin-top: 5%;
+  margin-left: 37%;
+  width: 50%;
+}
+.scoreBoard {
+  margin-top: 2%;
+  float:right;
+  margin-right: 5%;
+  font-size: 40px
+}
+.buttons {
+  float: left;
+  margin-left: 9%;
+  height: 50px;
+  width:80px;
+
+}
+.title{
+  width: 40%;
+  margin-left: 35%;
+  font-size: 50px
+}
+.leaderBoard {
+  margin-top: 5%;
+  width: 50%;
+  margin-left: 25%
+}
+.link {
+  margin-top: 15%;
+  margin-left: 3%
+}
+.backButton {
+  margin-left: 70%
+}
+
+button {
+  height: 100%;
+  font-size: 25px
+}
+
+.sideNote {
+  font-size: 20px;
+  margin-left: 10px
+}
+.board {
+  border-color: black;
+  border-spacing: thin;
+  border-style: solid
+}
+.boardMain {
+    border-color: black;
+    border-spacing: thin;
+    border-style: solid;
+    padding: 15px;
+    height: 100px;
+    width: 90px
+}
