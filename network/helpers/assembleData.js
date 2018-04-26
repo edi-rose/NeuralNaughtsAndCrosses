@@ -2,7 +2,7 @@ const makeInput = require('./boardToInput')
 const getSquare = require('./getSquare')
 const makeBoards = require('../boardStuff/makeBoards')
 const crossMove = require('../Bots/botMovesReact').crossMove
-const naughtMove = require('./Bots/botMovesReact').naughtMove
+const naughtMove = require('../Bots/botMovesReact').naughtMove
 
 let boards = makeBoards(2000)
 

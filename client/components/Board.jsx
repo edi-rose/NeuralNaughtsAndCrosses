@@ -55,7 +55,7 @@ class Board extends React.Component{
   }
   getCell(){
     let board = this.state.grid[0].concat(this.state.grid[1], this.state.grid[2])
-    let options = getNetworkReccomendation(board)
+    let options = getNetworkReccomendation(board, botTeam)
     let chosen = null
     const {grid} = this.state
     for (var i = 0; i < options.length; i++) {

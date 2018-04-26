@@ -1,6 +1,6 @@
 const brain = require('brain.js')
 const data = require('./helpers/assembleData')
-const jsonNetwork = require('./network')
+const getData = require('./helpers/assembleData')
 
 //This file trains the network which has been turned into a json and saved in network.json
 
@@ -11,3 +11,8 @@ function train(team){
     iterations:2000
   })
 }
+
+train('naught')
+console.log(network.toJSON().layers)
+console.log(network.toJSON().layers[1])
+console.log(network.toJSON().layers[2])
