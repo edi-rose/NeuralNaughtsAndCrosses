@@ -58,15 +58,17 @@ class Board extends React.Component{
     let options = getNetworkReccomendation(board)
     console.log('options: ', options)
     console.log(board)
+    let chosen = null
     const {grid} = this.state
     for (var i = 0; i < options.length; i++) {
-      for (var i = 0; i < board.length; i++) {
-        if(board[i].name == options[i] && board[i].teamName == 'none'){
-          console.log(board[i])
-          return board[i]
+      board.forEach(function(cell) {
+        console.log(options[i], ' ', cell.name, chosen)
+        if(cell.name == options[i] && cell.teamName == 'none' && chosen == null){
+          chosen = cell
         }
-      }
+      })
     }
+  return chosen
   }
   claimSquare(cell, team){
     const {grid} = this.state
