@@ -14,6 +14,7 @@ function getNetworkReccomendation(board, team) {
     net.fromJSON(crossNetwork)
   }
   else if(team == 'naught'){
+    console.log('naught network called')
     net.fromJSON(naughtNetwork)
   }
   else {
