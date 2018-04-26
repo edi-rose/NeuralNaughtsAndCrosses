@@ -1,6 +1,6 @@
 
-function getReccomendedSqaureName(output){
-   return matchIdxToName(sortOutput(output), output)
+function getNames(output){
+   return matchArrToNames(sortOutput(output), output)
 }
 
 function getIdx(output){
@@ -22,7 +22,7 @@ function sortOutput(output){
   return sortedArray
 }
 
-function matchIdxToName(Arr, output){
+function matchArrToNames(Arr, output){
   let Names = []
   for (var i = 0; i < Arr.length; i++) {
       Object.keys(output).forEach(function(key){
@@ -34,4 +34,4 @@ function matchIdxToName(Arr, output){
   return Names
 }
 
-module.exports = getReccomendedSqaureName
+module.exports = getNames

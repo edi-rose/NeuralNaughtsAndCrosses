@@ -54,15 +54,19 @@ class Board extends React.Component{
   }
   }
   getCell(){
-    let squareName = (getNetworkReccomendation(this.state.grid))
-    let cell
+    let board = this.state.grid[0].concat(this.state.grid[1], this.state.grid[2])
+    let options = getNetworkReccomendation(board)
+    console.log('options: ', options)
+    console.log(board)
     const {grid} = this.state
-    grid.forEach(row => row.forEach(c => {
-      if (c.name == squareName) {
-        cell = c
+    for (var i = 0; i < options.length; i++) {
+      for (var i = 0; i < board.length; i++) {
+        if(board[i].name == options[i] && board[i].teamName == 'none'){
+          console.log(board[i])
+          return board[i]
+        }
       }
-    }))
-    return cell
+    }
   }
   claimSquare(cell, team){
     const {grid} = this.state
