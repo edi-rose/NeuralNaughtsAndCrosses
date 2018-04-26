@@ -6,8 +6,8 @@ const jsonNetwork = require('./network')
 
 const network = new brain.NeuralNetwork([9, 9, 1])
 
-function train(){
-  network.train(data, {
+function train(team){
+  network.train(getData(team), {
     iterations:2000
   })
 }

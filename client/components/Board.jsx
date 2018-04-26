@@ -6,7 +6,7 @@ var board = require('../boardArray')
 var checkForWin = require('../winCheck')
 import ScoreBoard from './scoreBoard'
 import Buttons from './buttons'
-var getNetworkReccomendation = require('../../network/app.js')
+var getNetworkReccomendation = require('../../network/crossNetwork.js')
 
 var count = 1
 
@@ -56,13 +56,10 @@ class Board extends React.Component{
   getCell(){
     let board = this.state.grid[0].concat(this.state.grid[1], this.state.grid[2])
     let options = getNetworkReccomendation(board)
-    console.log('options: ', options)
-    console.log(board)
     let chosen = null
     const {grid} = this.state
     for (var i = 0; i < options.length; i++) {
       board.forEach(function(cell) {
-        console.log(options[i], ' ', cell.name, chosen)
         if(cell.name == options[i] && cell.teamName == 'none' && chosen == null){
           chosen = cell
         }
@@ -104,7 +101,6 @@ class Board extends React.Component{
   }
   checkWins(){
     if(checkForWin('cross')){
-       console.log('crosses win', this.state.crossesScore)
         this.setState({
           crossesScore: this.state.crossesScore + 1,
           gameOver:true

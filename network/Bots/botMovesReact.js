@@ -6,27 +6,15 @@ var board = require('../boardStuff/board')
 
 function crossMove(board){
       if(attack('cross', board)){
-        if(attack('cross', board) == false){
-          console.log('attack')
-        }
         return attack('cross', board)
       }
       else if(defend('cross', board)){
-        if(defend('cross', board) == false){
-          console.log('defense')
-        }
         return defend('cross', board)
         }
         else if(smartMove('cross', board)){
-          if(smartMove('cross', board) == false){
-            console.log('smartMove cross')
-          }
           return smartMove('cross', board)
         }
         else if(smartMove('naught', board)){
-          if(smartMove('naught', board) == false){
-            console.log('smartMove naught')
-          }
           return smartMove('naught', board)
         }
       else {
@@ -38,5 +26,27 @@ function crossMove(board){
       }
 }
 
+function naughtMove(board){
+      if(attack('naught', board)){
+        return attack('naught', board)
+      }
+      else if(defend('naught', board)){
+        return defend('naught', board)
+        }
+        else if(smartMove('naught', board)){
+          return smartMove('naught', board)
+        }
+        else if(smartMove('cross', board)){
+          return smartMove('cross', board)
+        }
+      else {
+        for (var i = 0; i < board.length; i++) {
+          if(board[i].teamName == 'none'){
+            return i
+          }
+        }
+      }
+}
 
-module.exports= crossMove
+
+module.exports= {crossMove: crossMove, naughtMove: naughtMove}
