@@ -21,10 +21,9 @@ with the final creation of data being done in the 'assembleData' file.
 
 Current state:
 
-The Network can currently make moves on a board against an opponent. Unfortunately
-the network doesn't know the rules and often tries to claim squares which are
-already taken. The network also is only trained to play as cross, I will need
-to create a whole other network to play as naughts.
+The network can now play as either naughts or crosses and plays fairly well.
+Makes many mistakes but the training has gone well all things considered.
 
-Once I can play full games against both a naughts and a crosses network, I will
-attempt to make the networks learn as you play against them.
+My next goal is too make is so that it learns as the user plays against it. This
+will mean creating a database which will hold the network and then have it be trained
+through a stream. This is a real challenge. 

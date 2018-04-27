@@ -9,7 +9,7 @@ const boardToInput = require('./helpers/boardToInput')
 var net = new brain.NeuralNetwork()
 
 function getNetworkReccomendation(board, team) {
-  let input = boardToInput(board)
+  let input = boardToInput(board, team)
   if(team == 'cross'){
     net.fromJSON(crossNetwork)
   }

@@ -1,5 +1,8 @@
 const checkForWin = require('../Bots/winChecker')
 
+/* this function essentially runs through the board and randomly decides whether
+it's going to claim each square as a 0, X or not at all */
+
 function randomizeBoard(board, variable){
   let cTurn = 0
   let nTurn = 0

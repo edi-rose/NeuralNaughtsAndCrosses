@@ -1,4 +1,5 @@
-
+//This file is used to match input data to the output format. Giving it a name,
+//and ID for the getData function in assembleData.js
 
 class Square {
   constructor(id, name){

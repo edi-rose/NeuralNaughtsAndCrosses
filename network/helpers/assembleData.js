@@ -6,6 +6,8 @@ const naughtMove = require('../Bots/botMovesReact').naughtMove
 
 let boards = makeBoards(2000)
 
+//This file assembles all the input and output data for the network to be trained on.
+
 function getData(team) {
   let data =[]
   for (var i = 0; i < boards.length; i++) {

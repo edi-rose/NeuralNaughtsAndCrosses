@@ -6,7 +6,8 @@ function getNumber() {
   return Math.floor(Math.random()*10 + 5)
 }
 
-//This function takes an amount and creates that many "randomized boards"
+/*This function takes an amount and creates that many randomized boards, which
+are used for training data*/
 function makeBoards(amount){
   let arr = []
   for (var i = 0; i < amount; i++) {

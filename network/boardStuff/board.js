@@ -1,3 +1,5 @@
+//This is the board on which the bots can play and be randomized. 
+
 let topLeft = {name:'topLeft', teamName:'none', row:0, col:0, D1: true}
 let topMid = {name:'topMid', teamName:'none', row:0, col:1}
 let topRight = {name:'topRight', teamName:'none', row:0, col:2, D2: true}

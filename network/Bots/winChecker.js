@@ -1,3 +1,7 @@
+/*This file checks to see if the game is won, this is important because when
+creating the randomized boards for our training data we don't want to have any
+in which the game is already won.*/
+
 function checkForWin(team, board){
   var taken = getTeam(team, board)
   if (checkRows(taken)

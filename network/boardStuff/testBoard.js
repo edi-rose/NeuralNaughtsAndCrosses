@@ -1,5 +1,7 @@
 const makeInput = require('../helpers/boardToInput')
 
+/*this is the test board I use when testing the network */
+
 let topLeft = {teamName:'cross', row:0, col:0, D1: true}
 let topMid = {teamName:'none', row:0, col:1}
 let topRight = {teamName:'cross', row:0, col:2, D2: true}
