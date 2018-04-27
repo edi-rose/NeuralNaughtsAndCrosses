@@ -1,4 +1,7 @@
 
+/* This file takes the output of the networks and turns it into a list of
+reccommendations that the client can then interperate and then make it's move.*/
+
 function getNames(output){
    return matchArrToNames(sortOutput(output), output)
 }

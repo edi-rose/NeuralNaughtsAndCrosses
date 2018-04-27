@@ -2,7 +2,12 @@ var defend = require('./functions/defense.js').defend
 var attack = require('./functions/attack.js').attack
 var smartMove = require('./functions/smartMove.js').smartMove
 var defendPin = require('./functions/DefendDoublePin').defendPin
-var board = require('../boardStuff/board')
+
+
+/* This crossMove and naughtMove each take a board and return the correct square
+to take. They call upon defend, attack, smartmove and defendpin functions. I'm
+using these bots to create the expected output for the training data.*/
+
 
 function crossMove(board){
       if(attack('cross', board)){
