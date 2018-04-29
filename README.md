@@ -8,6 +8,10 @@ My next goal is too make is so that it learns as the user plays against it. This
 will mean creating a database which will hold the network and then have it be trained
 through a stream. This is a real challenge.
 
+Steps:
+
+1. Create a database which saves the state of the board after each turn. 
+
 
 How to use?
 
@@ -30,4 +34,4 @@ I am currently thinking of ways to have a user train the network while playing
 against it. This will involve using a Database of which there currently is none.
 It will also mean creating a stream in which the games are saved and send through
 a pipeline which then formats it as input and output data and trains the network
-with it. 
+with it.
