@@ -3,4 +3,8 @@ exports.up = function(knex, Promise) {
     table.increments('id')
     table.string('board')
   })
-};
+}
+
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTableIfExists('boards')
+}
