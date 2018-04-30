@@ -10,15 +10,20 @@ through a stream. This is a real challenge.
 
 Steps:
 
-1. Create a database which saves the state of the board after each turn. 
-
+1. To train a network live I will have too:
+     --> Get the board state after each turn
+     --> turn it into a string of an array nine numbers '[1, -1, 0, 0, 1, -1, 1, 1, 0]'
+     --> create a post request and send it to the DataBase
+     --> Every time something is added to the database take it on the backend
+     --> turn it back into an array
+     --> train the network off of the new array 
 
 How to use?
 
 You can currently play against my networks by cloning this repo and running it on local host.
 
 In trainer.js you can train a new network. The best way I found to use it is to
-console.log it at a json and then copy it into a newfile which you can then call
+console.log it at a json and then copy it into a new file which you can then call
 in the network.js file.
 
 Training the network will involve choosing how many boards to create for it
