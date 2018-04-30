@@ -5,6 +5,6 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('boards').insert([
         {id: 1, board: '100000000'}
-      ]);
-    });
-};
+      ])
+    })
+}
