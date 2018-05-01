@@ -7,6 +7,7 @@ var checkForWin = require('../winCheck')
 import ScoreBoard from './scoreBoard'
 import Buttons from './buttons'
 var getNetworkReccomendation = require('../../network/network.js')
+var saveBoard = require('../saveBoard')
 
 var count = 1
 
@@ -96,8 +97,10 @@ class Board extends React.Component{
       var {grid} = this.state
       this.claimSquare(this.getCell(), botTeam)
       this.checkWins()
+      saveBoard(this.state.grid)
     }, 2000)
     this.checkWins()
+    saveBoard(this.state.grid)
   }
   checkWins(){
     if(checkForWin('cross')){
