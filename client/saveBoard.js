@@ -13,5 +13,3 @@ function arrangeBoard(board){
 }
 
 module.exports = saveBoard
-
-console.log(saveBoard([[1, 2, 3], [1, 2, 3], [ 2, 3, 1]]))
