@@ -12,7 +12,7 @@ Steps:
 
 1. To train a network live I will have too:
      --> Get the board state after each turn (done)
-     --> turn it into a string of an array nine numbers '[1, -1, 0, 0, 1, -1, 1, 1, 0]' (done)
+     --> turn it into a string of an array nine numbers '1, -1, 0, 0, 1, -1, 1, 1, 0' (done)
      --> send it to the API
      --> send it to the Database
      --> Every time something is added to the database take it on the backend
