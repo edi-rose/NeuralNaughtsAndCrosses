@@ -3,8 +3,8 @@ var boardToInput = require('../network/helpers/boardToInput')
 
 function saveBoard(board){
   let newBoard = arrangeBoard(board)
-  let boardArray = boardToInput(newBoard)
-
+  let boardArray = (boardToInput(newBoard))
+  return String(boardArray)
 }
 
 function arrangeBoard(board){
@@ -13,3 +13,5 @@ function arrangeBoard(board){
 }
 
 module.exports = saveBoard
+
+console.log(saveBoard([[1, 2, 3], [1, 2, 3], [ 2, 3, 1]]))
