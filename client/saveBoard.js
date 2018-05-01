@@ -1,9 +1,9 @@
 var boardToInput = require('../network/helpers/boardToInput')
+//var router = require('../routes/api')
 
 function saveBoard(board){
   let newBoard = arrangeBoard(board)
   let boardArray = boardToInput(newBoard)
-  console.log(boardArray)
 
 }
 

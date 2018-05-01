@@ -1,16 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const apiRoutes = require('../routes/api')
+const server = express()
 
-const app = express()
+server.get('/test', function(req, res){
+  res.send('hello world')
+})
 
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+server.post('/test', function(req, res){
+  res.send('recieved post request')
+}
+)
 
-
-app.use('/api', apiRoutes)
-
-
-module.exports = app
+module.exports = server

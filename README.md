@@ -11,12 +11,13 @@ through a stream. This is a real challenge.
 Steps:
 
 1. To train a network live I will have too:
-     --> Get the board state after each turn
-     --> turn it into a string of an array nine numbers '[1, -1, 0, 0, 1, -1, 1, 1, 0]'
-     --> create a post request and send it to the DataBase
+     --> Get the board state after each turn (done)
+     --> turn it into a string of an array nine numbers '[1, -1, 0, 0, 1, -1, 1, 1, 0]' (done)
+     --> send it to the API
+     --> send it to the Database
      --> Every time something is added to the database take it on the backend
      --> turn it back into an array
-     --> train the network off of the new array 
+     --> train the network off of the new array
 
 How to use?
 
