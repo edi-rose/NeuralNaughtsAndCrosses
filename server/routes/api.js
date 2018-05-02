@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-addBoard = require('../db')
+var addBoard = require('../db')
 
-router.post('/api/newBoard', (req, res) => {
+router.post('/', (req, res) => {
   addBoard(req)
   .then(boardId => {
     res.json({boardId})
