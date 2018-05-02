@@ -1,3 +1,5 @@
+/* this component renders the try again and change team buttons */
+
 import React from 'react'
 
 export default function Buttons(props){

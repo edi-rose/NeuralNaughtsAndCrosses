@@ -1,3 +1,6 @@
+/*This component holds the board and accounts for most of the functionality,
+it is the parent of buttons and scoreboard components */
+
 import React from 'react'
 var userTeam = require('../settings').userTeam
 var botTeam = require('../settings').botTeam

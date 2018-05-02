@@ -1,3 +1,5 @@
+/* this component renders the team scores */
+
 import React from 'react'
 
 export default function ScoreBoard(props) {
