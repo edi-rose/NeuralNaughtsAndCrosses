@@ -1,9 +1,11 @@
 import request from 'superagent'
 var arrangeBoard = require('./arrangeBoard')
 
-function addBoard(board){
+function saveBoard(board, callback){
   let newBoard = arrangeBoard(board)
-  request
-    .send('/api/newBoard')
-    .then()
+  request.post('/api/newBoard')
+    .send({board})
+    .then(callback)
 }
+
+module.exports = saveBoard

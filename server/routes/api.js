@@ -3,10 +3,10 @@ const router = express.Router()
 
 addBoard = require('../db')
 
-router.post('/', (req, res) => {
+router.post('/api/newBoard', (req, res) => {
   addBoard(req)
-  .then(diceId => {
-    res.json({diceId})
+  .then(boardId => {
+    res.json({boardId})
     })
   .catch(err => {
     res.status(500).send('DATABASE_ERROR: ' + err.message)
