@@ -5,6 +5,8 @@ const getNames = require('./resultHandlers/getReccomendation')
 const testBoard = require('./boardStuff/testBoard')
 const boardToInput = require('./helpers/boardToInput')
 
+/* this file takes the json of any network, turns it into a network variable
+and can then get the networks reccommendations given a board and a team */
 
 var net = new brain.NeuralNetwork()
 
