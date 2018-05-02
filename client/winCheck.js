@@ -1,3 +1,7 @@
+/* checkForWin takes team checks whether the game has been won */
+
+//REVISIT UNTESTED
+
 var board = require('./boardArray.js')
 
 function checkForWin(team){

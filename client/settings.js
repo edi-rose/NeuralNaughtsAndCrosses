@@ -1,3 +1,5 @@
+/* this file manages the team settings for the Board.jsx component */
+
 var userTeam = 'cross'
 var botTeam = 'naught'
 

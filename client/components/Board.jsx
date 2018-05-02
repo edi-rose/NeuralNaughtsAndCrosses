@@ -97,9 +97,11 @@ class Board extends React.Component{
       var {grid} = this.state
       this.claimSquare(this.getCell(), botTeam)
       this.checkWins()
-      saveBoard(this.state.grid, this.checkWins())
+      saveBoard(this.state.grid)
+      this.checkWins()
     }, 2000)
-    saveBoard(this.state.grid, this.checkWins())
+    saveBoard(this.state.grid)
+    this.checkWins()
   }
   checkWins(){
     if(checkForWin('cross')){
@@ -112,8 +114,8 @@ class Board extends React.Component{
         this.setState({
           naughtsScore: this.state.naughtsScore + 1,
           gameOver:true
-        })
-      }
+      })
+    }
   }
   render() {
     return (

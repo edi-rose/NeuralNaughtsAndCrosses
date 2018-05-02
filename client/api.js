@@ -1,11 +1,15 @@
 import request from 'superagent'
 var arrangeBoard = require('./arrangeBoard')
 
-function saveBoard(board, callback){
+function saveBoard(board){
   let newBoard = arrangeBoard(board)
   request.post('/api')
-    .send({board})
-    .then(callback)
+    .send({newBoard})
+    .end((err, res) => {
+      console.log('board: ', {newBoard})
+      console.log('err: ', err)
+      console.log('res: ', res)
+    })
 }
 
 module.exports = saveBoard
