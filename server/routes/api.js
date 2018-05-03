@@ -4,6 +4,7 @@ const router = express.Router()
 var addBoard = require('../db')
 
 router.post('/', (req, res) => {
+  console.log('route called')
   addBoard(req)
   .then(boardId => {
     res.json({boardId})
