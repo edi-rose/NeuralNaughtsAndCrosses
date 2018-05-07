@@ -1,7 +1,7 @@
 /* arrangeBoard takes the board from it's format in Board.jsx and turns it into
 the proper format for the api/database */
 
-var boardToInput = require('../network/helpers/boardToInput')
+var boardToInput = require('./network/helpers/boardToInput')
 
 function arrangeBoard(board){
   let newBoard = concatBoard(board)

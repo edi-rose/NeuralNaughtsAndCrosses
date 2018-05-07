@@ -9,7 +9,7 @@ var board = require('../boardArray')
 var checkForWin = require('../winCheck')
 import ScoreBoard from './scoreBoard'
 import Buttons from './buttons'
-var getNetworkReccomendation = require('../../network/network.js')
+var getNetworkReccomendation = require('../network/network.js')
 var saveBoard = require('../api')
 
 var count = 1
