@@ -6,7 +6,7 @@ function handleBoard(board){
 
 
 function destring(board){
-  return board.newBoard.split(',').map(x => parseInt(x, 10))
+  return board.split(',').map(x => parseInt(x, 10))
 }
 
 module.exports = handleBoard
