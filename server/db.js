@@ -6,7 +6,7 @@ function addBoard(board){
   console.log('addBoard called')
   const db = connection
   return connection('boards')
-    .insert({id: 1, board: board})
+    .insert({board: board})
 }
 
 module.exports = addBoard
