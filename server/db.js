@@ -4,9 +4,10 @@ const connection = require('knex')(config)
 
 function addBoard(board){
   console.log('addBoard called')
+  console.log(board.newBoard)
   const db = connection
   return connection('boards')
-    .insert({board: board})
+    .insert({board: board.newBoard})
 }
 
 module.exports = addBoard
