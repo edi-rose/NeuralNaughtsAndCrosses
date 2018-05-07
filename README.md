@@ -12,16 +12,11 @@ My next goal is too make is so that it learns as the user plays against it. This
 will mean creating a database which will hold the network and then have it be trained
 through a stream. This is a real challenge.
 
-Steps:
+Next Steps:
 
-1. To train a network live I will have too:
-     --> Get the board state after each turn (done)
-     --> turn it into a string of an array nine numbers '1, -1, 0, 0, 1, -1, 1, 1, 0' (done)
-     --> send it to the API (done)
-     --> send it to the Database (done)
-     --> Every time something is added to the database take it on the backend
-     --> turn it back into an array
-     --> train the network off of the new array
+  --> create a stream
+  --> train it off of the data from the db
+  --> save the network in the database
 
 How to use?
 
