@@ -1,6 +1,6 @@
 At the point at which the network can securely improve in real time against the users
 my plan will be to issue a 50$ for the last person to beat it. I think that's a pretty
-cool idea. 
+cool idea.
 
 
 Current state:
@@ -17,8 +17,8 @@ Steps:
 1. To train a network live I will have too:
      --> Get the board state after each turn (done)
      --> turn it into a string of an array nine numbers '1, -1, 0, 0, 1, -1, 1, 1, 0' (done)
-     --> send it to the API
-     --> send it to the Database
+     --> send it to the API (done)
+     --> send it to the Database (done)
      --> Every time something is added to the database take it on the backend
      --> turn it back into an array
      --> train the network off of the new array
