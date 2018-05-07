@@ -1,3 +1,7 @@
+At the point at which the network can securely improve in real time against the users
+my plan will be to issue a 50$ for the last person to beat it. I think that's a pretty
+cool idea. 
+
 
 Current state:
 
