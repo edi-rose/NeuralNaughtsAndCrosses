@@ -1,6 +1,7 @@
 import request from 'superagent'
 var arrangeBoard = require('./arrangeBoard')
 
+//makes api post request with each board iteration
 function saveBoard(board){
   let newBoard = arrangeBoard(board)
   request
@@ -11,6 +12,7 @@ function saveBoard(board){
     })
 }
 
+//makes a get request for reccomendations on naught moves
 function getNaught (callback) {
   request
     .get('/naught')
@@ -23,6 +25,7 @@ function getNaught (callback) {
     })
 }
 
+//makes a get request for reccomendations on cross moves
 function getCross (callback) {
   request
     .get('/cross')
