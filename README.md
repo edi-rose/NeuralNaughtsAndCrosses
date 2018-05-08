@@ -12,11 +12,6 @@ My next goal is too make is so that it learns as the user plays against it. This
 will mean creating a database which will hold the network and then have it be trained
 through a stream. This is a real challenge.
 
-Next Steps:
-
-  --> create a stream
-  --> train it off of the data from the db
-  --> save the network in the database
 
 How to use?
 
@@ -35,8 +30,10 @@ the data go into the trainer.js and adjust the iterations number.
 
 What next?
 
-I am currently thinking of ways to have a user train the network while playing
-against it. This will involve using a Database of which there currently is none.
-It will also mean creating a stream in which the games are saved and send through
-a pipeline which then formats it as input and output data and trains the network
-with it.
+--> Save json networks in a table in sql
+--> Have the client side make a get request for these networks
+--> client side then turns the json into it's networks
+--> it then uses the network to make it's move
+--> client then trains the network off of the move it just performed
+--> client turns network back into a json
+--> sends json as a post request back to the database
