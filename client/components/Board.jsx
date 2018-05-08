@@ -9,8 +9,8 @@ var board = require('../boardArray')
 var checkForWin = require('../winCheck')
 import ScoreBoard from './scoreBoard'
 import Buttons from './buttons'
-var getNetworkReccomendation = require('../network/network.js')
-var saveBoard = require('../api')
+var getNetwork = require('../network/network.js')
+var saveBoard = require('../api').saveBoard
 
 var count = 1
 
@@ -59,7 +59,7 @@ class Board extends React.Component{
   }
   getCell(){
     let board = this.state.grid[0].concat(this.state.grid[1], this.state.grid[2])
-    let options = getNetworkReccomendation(board, botTeam)
+    let options = getNetwork(board, botTeam)
     let chosen = null
     const {grid} = this.state
     for (var i = 0; i < options.length; i++) {
