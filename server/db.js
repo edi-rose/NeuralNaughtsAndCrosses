@@ -8,4 +8,14 @@ function addBoard(board){
     .insert({board: board.newBoard})
 }
 
+function getCross(){
+  const db = connection
+  return connection('crossNetwork').where('id', 1)
+}
+
+function getNaught(){
+  const db = connection
+  return connection('naughtNetwork').where('id', 1)
+}
+
 module.exports = addBoard
