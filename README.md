@@ -30,7 +30,7 @@ the data go into the trainer.js and adjust the iterations number.
 
 What next?
 
---> Save json networks in a table in sql
+--> Save json networks in a table in sql (done)
 --> Have the client side make a get request for these networks
 --> client side then turns the json into it's networks
 --> it then uses the network to make it's move

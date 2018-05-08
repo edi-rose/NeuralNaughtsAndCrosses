@@ -13,6 +13,5 @@ router.post('/', (req, res) => {
   })
 })
 
-router.get('/hi', (req, res) => res.send('Hello World!'))
 
 module.exports = router

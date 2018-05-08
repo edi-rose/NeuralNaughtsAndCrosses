@@ -11,4 +11,28 @@ function saveBoard(board){
     })
 }
 
-module.exports = saveBoard
+function getNaught (callback) {
+  request
+    .get('/naught')
+    .then((err, data) => {
+      if(err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+function getCross (callback) {
+  request
+    .get('/cross')
+    .then((err, data) => {
+      if(err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+module.exports = {saveBoard: saveBoard, getCross:getCross, getNaught:getNaught}
