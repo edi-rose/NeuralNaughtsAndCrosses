@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('crossNetwork').insert([
-        {id: 1, crossNetwork: crossJson}
+        {id: 1, crossNetwork: JSON.stringify(crossJson)}
       ])
     })
 }
