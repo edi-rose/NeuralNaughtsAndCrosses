@@ -11,7 +11,6 @@ function addBoard(board){
 
 //queries the db for the crossNetwork
 function getCross(){
-  console.log('db query called')
   const db = connection
   return connection('crossNetwork').where('id', 1)
 }

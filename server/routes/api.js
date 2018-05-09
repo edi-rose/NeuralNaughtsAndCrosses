@@ -15,7 +15,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  console.log('route called')
     getCross().then((data) => {
       res.json(data)
   })
