@@ -7,7 +7,7 @@ and can then get the networks reccommendations given a board and a team */
 
 var net = new brain.NeuralNetwork()
 
-function getNetworkReccomendation(board, team, json) {
+function getNetworkReccomendation(json, team, board) {
   let input = boardToInput(board, team)
   net.fromJSON(json)
   let run = net.toFunction()
