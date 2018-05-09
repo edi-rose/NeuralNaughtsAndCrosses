@@ -14,4 +14,4 @@ function concatBoard(board){
     return newBoard
 }
 
-module.exports = arrangeBoard
+module.exports = {arrangeBoard: arrangeBoard, concatBoard: concatBoard}

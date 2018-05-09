@@ -12,6 +12,7 @@ import Buttons from './buttons'
 var getCross = require('../api.js').getCross
 var saveBoard = require('../api').saveBoard
 var handleNetwork = require('../network/handleNetwork')
+const concatBoard = require('../arrangeBoard').concatBoard
 
 var count = 1
 
@@ -35,6 +36,7 @@ class Board extends React.Component{
     this.resetBoard = this.resetBoard.bind(this)
     this.changeTeam = this.changeTeam.bind(this)
     this.checkWins = this.checkWins.bind(this)
+    this.makeRequest = this.makeRequest.bind(this)
   }
   resetBoard() {
   for(const cell of board){
@@ -123,7 +125,7 @@ class Board extends React.Component{
     }
   }
   makeRequest(){
-    getCross(handleNetwork)
+    getCross(handleNetwork, botTeam, concatBoard(this.state.grid))
   }
   render() {
     return (
