@@ -123,7 +123,7 @@ class Board extends React.Component{
     }
   }
   makeRequest(){
-    getCross(() => handleNetwork())
+    getCross(handleNetwork)
   }
   render() {
     return (
