@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-var addBoard = require('../db')
+var getCross = require('../db').getCross
+var addBoard = require('../db').addBoard
 
 router.post('/', (req, res) => {
   addBoard(req.body)
@@ -14,7 +15,8 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  db.getCrossNetwork().then((data) => {
+  console.log('route called')
+    getCross().then((data) => {
       res.json(data)
   })
 })

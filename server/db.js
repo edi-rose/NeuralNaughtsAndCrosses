@@ -11,6 +11,7 @@ function addBoard(board){
 
 //queries the db for the crossNetwork
 function getCross(){
+  console.log('db query called')
   const db = connection
   return connection('crossNetwork').where('id', 1)
 }
@@ -21,4 +22,4 @@ function getNaught(){
   return connection('naughtNetwork').where('id', 1)
 }
 
-module.exports = addBoard
+module.exports = {addBoard: addBoard, getCross: getCross}
