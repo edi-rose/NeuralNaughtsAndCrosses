@@ -13,7 +13,6 @@ var getCross = require('../api.js').getCross
 var saveBoard = require('../api').saveBoard
 var handleNetwork = require('../network/handleNetwork')
 const concatBoard = require('../arrangeBoard').concatBoard
-
 var count = 1
 
 class Board extends React.Component{
@@ -30,7 +29,7 @@ class Board extends React.Component{
       ],
       naughtsScore: 0,
       crossesScore: 0,
-      gameOver:false
+      gameOver:false,
     }
     this.userClick = this.userClick.bind(this)
     this.resetBoard = this.resetBoard.bind(this)
@@ -62,7 +61,8 @@ class Board extends React.Component{
   }
   getCell(){
     let board = this.state.grid[0].concat(this.state.grid[1], this.state.grid[2])
-    let options = get(board, botTeam)
+    console.log(getCross(handleNetwork, botTeam, concatBoard(this.state.grid)))
+    let options = getCross(handleNetwork, botTeam, concatBoard(this.state.grid))
     console.log(options)
     let chosen = null
     const {grid} = this.state
@@ -125,7 +125,7 @@ class Board extends React.Component{
     }
   }
   makeRequest(){
-    getCross(handleNetwork, botTeam, concatBoard(this.state.grid))
+    console.log(getCross(handleNetwork, botTeam, concatBoard(this.state.grid)))
   }
   render() {
     return (
