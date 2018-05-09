@@ -27,13 +27,14 @@ function getNaught (callback) {
 
 //makes a get request for reccomendations on cross moves
 function getCross(callback) {
+  callback('hello')
   console.log('client api called')
   request
     .get('/api')
     .then((err, data) => {
       console.log('got to .then')
       if(err) {
-        console.log('err')
+        console.log(err)
         callback(err)
       } else {
         console.log('no err')
