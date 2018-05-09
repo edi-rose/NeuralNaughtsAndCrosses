@@ -2,7 +2,7 @@ const environment = process.env.NODE_ENV || 'development'
 const config = require('../knexfile')[environment]
 const connection = require('knex')(config)
 
-//inserts a board to thedb 
+//inserts a board to thedb
 function addBoard(board){
   const db = connection
   return connection('boards')

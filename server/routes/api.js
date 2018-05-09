@@ -13,5 +13,11 @@ router.post('/', (req, res) => {
   })
 })
 
+router.get('/', (req, res) => {
+  db.getCrossNetwork().then((data) => {
+      res.json(data)
+  })
+})
+
 
 module.exports = router

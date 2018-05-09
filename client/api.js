@@ -1,6 +1,6 @@
 import request from 'superagent'
 var arrangeBoard = require('./arrangeBoard')
-
+var handleNetwork = require('./network/handleNetwork')
 //makes api post request with each board iteration
 function saveBoard(board){
   let newBoard = arrangeBoard(board)
@@ -15,7 +15,7 @@ function saveBoard(board){
 //makes a get request for reccomendations on naught moves
 function getNaught (callback) {
   request
-    .get('/naught')
+    .get('/naughtNetwork')
     .then((err, data) => {
       if(err) {
         callback(err)
@@ -26,9 +26,9 @@ function getNaught (callback) {
 }
 
 //makes a get request for reccomendations on cross moves
-function getCross (callback) {
+function getCross(callback) {
   request
-    .get('/cross')
+    .get('/api')
     .then((err, data) => {
       if(err) {
         callback(err)
