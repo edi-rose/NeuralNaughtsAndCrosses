@@ -44,6 +44,9 @@ function naughtMove(board){
         else if(smartMove('cross', board)){
           return smartMove('cross', board)
         }
+        else if(board[4].teamName == 'none'){
+          board[4].teamName = 'naught'  
+        }
       else {
         for (var i = 0; i < board.length; i++) {
           if(board[i].teamName == 'none'){
