@@ -1,18 +1,23 @@
 const brain = require('brain.js')
-const crossMove = require('../Bots/botMovesReact').crossMove
-const naughtMove = require('../Bots/botMovesReact').naughtMove
+const crossMove = require('./Bots/botMovesReact').crossMove
+const naughtMove = require('./Bots/botMovesReact').naughtMove
+const makeInput = require('./helpers/boardToInput')
+const getSquare = require('./helpers/getSquare')
 
-function trainNetwork(network, board){
+function trainNetwork(network, team, board){
+  console.log('board: ', makeInput(board))
+  console.log('team: ', team)
   let output = getOutput(team, board)
-  network.train(([{input: board, output: output]))
+  console.log('output', output)
+  network.train(([{input: makeInput(board), output: output}]))
 }
 
 function getOutput(team, board){
   if(team == 'cross'){
-    obj['output'] = getSquare(crossMove(boards[i]))
+    return getSquare(crossMove(board))
   }
   else if(team == 'naught'){
-    obj['output'] = getSquare(naughtMove(boards[i]))
+    return  getSquare(naughtMove(board))
   }
   else {
     console.log('getData error -- team not found')
