@@ -8,7 +8,8 @@ function saveBoard(board){
   .post('/api')
     .send({newBoard})
     .end((err, res) => {
-
+    console.log('err: ', err)
+    console.log('res: ', res)
     })
 }
 
