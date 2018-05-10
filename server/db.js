@@ -21,4 +21,22 @@ function getNaught(){
   return connection('naughtNetwork').where('id', 1)
 }
 
-module.exports = {addBoard: addBoard, getCross: getCross, getNaught: getNaught}
+function saveCross(json){
+  const db = connection
+  return connection('crossNetwork')
+    .insert({'crossNetwork': json}).where('id', 1)
+}
+
+function saveNaught(json){
+  const db = connection
+  return connection('naughtNetwork')
+    .insert({'naughtNetwork': json}).where('id', 1)
+}
+
+module.exports = {
+  addBoard: addBoard,
+  getCross: getCross,
+  getNaught: getNaught,
+  saveNaught: saveNaught,
+  saveCross: saveCross
+}
