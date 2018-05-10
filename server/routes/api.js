@@ -14,11 +14,5 @@ router.post('/', (req, res) => {
   })
 })
 
-router.get('/', (req, res) => {
-    getCross().then((data) => {
-      res.json(data)
-  })
-})
-
 
 module.exports = router
