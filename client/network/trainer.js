@@ -3,11 +3,14 @@ const crossMove = require('./Bots/botMovesReact').crossMove
 const naughtMove = require('./Bots/botMovesReact').naughtMove
 const makeInput = require('./helpers/boardToInput')
 const getSquare = require('./helpers/getSquare')
+const saveNetwork = require('../api')
 
 function trainNetwork(network, team, board){
   console.log('board: ', makeInput(board))
   let output = getOutput(team, board)
   network.train(([{input: makeInput(board), output: output}]))
+  let json = network.toJSON()
+  saveNetwork(json, team)
 }
 
 function getOutput(team, board){
