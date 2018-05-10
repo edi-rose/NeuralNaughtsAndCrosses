@@ -14,7 +14,7 @@ function saveNetwork(json, team){
   if(team == 'cross'){
     request
     .post('/cross')
-    .send({json}
+    .send({json})
     .end((err, res) => {
       console.log('err: ', err)
       console.log('res: ', res)
@@ -23,7 +23,7 @@ function saveNetwork(json, team){
   else if(team =='naught'){
     request
     .post('/naught')
-    .send({json}
+    .send({json})
     .end((err, res) => {
       console.log('err: ', err)
       console.log('res: ', res)
