@@ -6,9 +6,7 @@ const getSquare = require('./helpers/getSquare')
 
 function trainNetwork(network, team, board){
   console.log('board: ', makeInput(board))
-  console.log('team: ', team)
   let output = getOutput(team, board)
-  console.log('output', output)
   network.train(([{input: makeInput(board), output: output}]))
 }
 
