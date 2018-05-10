@@ -14,6 +14,7 @@ var saveBoard = require('../api').saveBoard
 const concatBoard = require('../arrangeBoard').concatBoard
 const getNetworkReccomendation = require('../network/network')
 var count = 1
+const trainNetwork = require('../network/trainer')
 
 class Board extends React.Component{
   constructor (props) {
@@ -105,6 +106,7 @@ class Board extends React.Component{
       this.checkWins()
       saveBoard(this.state.grid)
       this.checkWins()
+      getNetwork(this.handleNetwork, botTeam, concatBoard(this.state.grid))
     }, 2000)
     saveBoard(this.state.grid)
     this.checkWins()
