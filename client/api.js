@@ -34,7 +34,7 @@ function getCross(callback, team, board) {
         console.log(err)
         callback(err)
       } else {
-        callback(data.body[0].crossNetwork, team, board)
+        return callback(data.body[0].crossNetwork, team, board)
       }
     })
 }

@@ -11,8 +11,8 @@ import ScoreBoard from './scoreBoard'
 import Buttons from './buttons'
 var getCross = require('../api.js').getCross
 var saveBoard = require('../api').saveBoard
-var handleNetwork = require('../network/handleNetwork')
 const concatBoard = require('../arrangeBoard').concatBoard
+const getNetworkReccomendation = require('../network/network')
 var count = 1
 
 class Board extends React.Component{
@@ -30,12 +30,14 @@ class Board extends React.Component{
       naughtsScore: 0,
       crossesScore: 0,
       gameOver:false,
+      moveList: []
     }
     this.userClick = this.userClick.bind(this)
     this.resetBoard = this.resetBoard.bind(this)
     this.changeTeam = this.changeTeam.bind(this)
     this.checkWins = this.checkWins.bind(this)
     this.makeRequest = this.makeRequest.bind(this)
+    this.handleNetwork = this.handleNetwork.bind(this)
   }
   resetBoard() {
   for(const cell of board){
@@ -60,10 +62,8 @@ class Board extends React.Component{
   }
   }
   getCell(){
-    let board = this.state.grid[0].concat(this.state.grid[1], this.state.grid[2])
-    console.log(getCross(handleNetwork, botTeam, concatBoard(this.state.grid)))
-    let options = getCross(handleNetwork, botTeam, concatBoard(this.state.grid))
-    console.log(options)
+    let options = this.state.moveList
+    console.log('moveList: ', this.state.moveList)
     let chosen = null
     const {grid} = this.state
     for (var i = 0; i < options.length; i++) {
@@ -126,6 +126,15 @@ class Board extends React.Component{
   }
   makeRequest(){
     console.log(getCross(handleNetwork, botTeam, concatBoard(this.state.grid)))
+  }
+  handleNetwork(data, team, board ){
+    this.setState({
+      moveList: getNetworkReccomendation(JSON.parse(data), team, board)
+    })
+    return true
+  }
+  componentWillMount(){
+     getCross(this.handleNetwork, botTeam, concatBoard(this.state.grid))
   }
   render() {
     return (
