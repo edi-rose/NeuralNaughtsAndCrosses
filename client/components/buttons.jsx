@@ -7,7 +7,6 @@ export default function Buttons(props){
   <div className="buttons">
     <button onClick= {() =>props.resetBoard()}>Try Again</button>
     <button onClick={() => props.changeTeam()}>Change Teams</button>
-    <button onClick={() => props.makeRequest()}> make request</button>
   </div>
 )
 }

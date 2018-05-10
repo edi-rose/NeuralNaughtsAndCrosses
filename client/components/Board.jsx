@@ -36,7 +36,6 @@ class Board extends React.Component{
     this.resetBoard = this.resetBoard.bind(this)
     this.changeTeam = this.changeTeam.bind(this)
     this.checkWins = this.checkWins.bind(this)
-    this.makeRequest = this.makeRequest.bind(this)
     this.handleNetwork = this.handleNetwork.bind(this)
   }
   resetBoard() {
@@ -124,9 +123,6 @@ class Board extends React.Component{
       })
     }
   }
-  makeRequest(){
-    console.log(getCross(handleNetwork, botTeam, concatBoard(this.state.grid)))
-  }
   handleNetwork(data, team, board ){
     this.setState({
       moveList: getNetworkReccomendation(JSON.parse(data), team, board)
@@ -161,7 +157,7 @@ class Board extends React.Component{
         <ScoreBoard naughtsScore = {this.state.naughtsScore} crossesScore = {this.state.crossesScore}/>
       </div>
       <div className="buttons">
-        <Buttons makeRequest = {this.makeRequest} resetBoard={this.resetBoard} changeTeam={this.changeTeam} />
+        <Buttons resetBoard={this.resetBoard} changeTeam={this.changeTeam} />
       </div>
       </div>
     </div>
