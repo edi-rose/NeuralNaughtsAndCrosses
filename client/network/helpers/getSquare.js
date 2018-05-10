@@ -1,4 +1,4 @@
-const squares = require('../boardStuff/squares')
+const squares = require('./squares')
 
 //This function takes square idx that the bot wants to claim and turns it into
 //an appropriate object e.g {topLeft: 1} for the output data

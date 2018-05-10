@@ -21,4 +21,4 @@ function getNaught(){
   return connection('naughtNetwork').where('id', 1)
 }
 
-module.exports = {addBoard: addBoard, getCross: getCross}
+module.exports = {addBoard: addBoard, getCross: getCross, getNaught: getNaught}

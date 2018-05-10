@@ -1,6 +1,5 @@
 import request from 'superagent'
 var arrangeBoard = require('./arrangeBoard').arrangeBoard
-var handleNetwork = require('./network/handleNetwork')
 //makes api post request with each board iteration
 function saveBoard(board){
   let newBoard = arrangeBoard(board)
@@ -8,35 +7,37 @@ function saveBoard(board){
   .post('/api')
     .send({newBoard})
     .end((err, res) => {
-
     })
 }
 
-//makes a get request for reccomendations on naught moves
-function getNaught (callback) {
-  request
-    .get('/naughtNetwork')
-    .then((err, data) => {
-      if(err) {
-        callback(err)
-      } else {
-        callback(null, res.body)
-      }
-    })
+//makes a get request for reccomendations from the networks
+function getNetwork(callback, team, board) {
+  if(team == 'cross'){
+    console.log('cross')
+    request
+      .get('/cross')
+      .then((data, err) => {
+        if(err) {
+          console.log(err)
+          callback(err)
+        } else {
+          return callback(data.body[0].crossNetwork, team, board)
+        }
+      })
+  }
+  else {
+    console.log('naught')
+    request
+      .get('/naught')
+      .then((data, err) => {
+        if(err) {
+          console.log(err)
+          callback(err)
+        } else {
+          return callback(data.body[0].naughtNetwork, team, board)
+        }
+      })
+  }
 }
 
-//makes a get request for reccomendations on cross moves
-function getCross(callback, team, board) {
-  request
-    .get('/api')
-    .then((data, err) => {
-      if(err) {
-        console.log(err)
-        callback(err)
-      } else {
-        return callback(data.body[0].crossNetwork, team, board)
-      }
-    })
-}
-
-module.exports = {saveBoard: saveBoard, getCross:getCross, getNaught:getNaught}
+module.exports = {saveBoard: saveBoard, getNetwork: getNetwork}

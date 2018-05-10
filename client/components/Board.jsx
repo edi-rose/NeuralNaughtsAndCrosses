@@ -9,11 +9,12 @@ var board = require('../boardArray')
 var checkForWin = require('../winCheck')
 import ScoreBoard from './scoreBoard'
 import Buttons from './buttons'
-var getCross = require('../api.js').getCross
+var getNetwork = require('../api.js').getNetwork
 var saveBoard = require('../api').saveBoard
 const concatBoard = require('../arrangeBoard').concatBoard
 const getNetworkReccomendation = require('../network/network')
 var count = 1
+const trainNetwork = require('../network/trainer')
 
 class Board extends React.Component{
   constructor (props) {
@@ -105,6 +106,7 @@ class Board extends React.Component{
       this.checkWins()
       saveBoard(this.state.grid)
       this.checkWins()
+      getNetwork(this.handleNetwork, botTeam, concatBoard(this.state.grid))
     }, 2000)
     saveBoard(this.state.grid)
     this.checkWins()
@@ -130,7 +132,7 @@ class Board extends React.Component{
     return true
   }
   componentWillMount(){
-     getCross(this.handleNetwork, botTeam, concatBoard(this.state.grid))
+     getNetwork(this.handleNetwork, botTeam, concatBoard(this.state.grid))
   }
   render() {
     return (
