@@ -10,6 +10,30 @@ function saveBoard(board){
     })
 }
 
+function saveNetwork(json, team){
+  if(team == 'cross'){
+    request
+    .post('/cross')
+    .send({json}
+    .end((err, res) => {
+      console.log('err: ', err)
+      console.log('res: ', res)
+    }))
+  }
+  else if(team =='naught'){
+    request
+    .post('/naught')
+    .send({json}
+    .end((err, res) => {
+      console.log('err: ', err)
+      console.log('res: ', res)
+    }))
+  }
+  else{
+    console.log('team error in save network')
+  }
+}
+
 //makes a get request for reccomendations from the networks
 function getNetwork(callback, team, board) {
   if(team == 'cross'){
@@ -40,4 +64,4 @@ function getNetwork(callback, team, board) {
   }
 }
 
-module.exports = {saveBoard: saveBoard, getNetwork: getNetwork}
+module.exports = {saveBoard: saveBoard, getNetwork: getNetwork, saveNetwork: saveNetwork}
