@@ -24,13 +24,13 @@ function getNaught(){
 function saveCross(json){
   const db = connection
   return connection('crossNetwork')
-    .insert({'crossNetwork': JSON.stringify(json)}).where('id', 1)
+    .insert({'crossNetwork': JSON.stringify(json.json)}).where('id', 1)
 }
 
 function saveNaught(json){
   const db = connection
   return connection('naughtNetwork')
-    .insert({'naughtNetwork': JSON.stringify(json)}).where('id', 1)
+    .insert({'naughtNetwork': JSON.stringify(json.json)}).where('id', 1)
 }
 
 module.exports = {

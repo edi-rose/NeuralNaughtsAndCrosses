@@ -9,5 +9,14 @@ router.get('/', (req, res) => {
   })
 })
 
+router.post('/', (req, res) => {
+  saveNaught(req.body)
+  .then(networkId => {
+    res.json({networkId})
+    })
+  .catch(err => {
+    res.status(500).send('DATABASE_ERROR: ' + err.message)
+  })
+})
 
 module.exports = router
