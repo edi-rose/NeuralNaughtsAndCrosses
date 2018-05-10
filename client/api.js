@@ -12,22 +12,24 @@ function saveBoard(board){
 
 function saveNetwork(json, team){
   if(team == 'cross'){
+    console.log(json)
     request
     .post('/cross')
     .send({json})
     .end((err, res) => {
       console.log('err: ', err)
       console.log('res: ', res)
-    }))
+    })
   }
   else if(team =='naught'){
+    console.log(json)
     request
     .post('/naught')
     .send({json})
     .end((err, res) => {
       console.log('err: ', err)
       console.log('res: ', res)
-    }))
+    })
   }
   else{
     console.log('team error in save network')

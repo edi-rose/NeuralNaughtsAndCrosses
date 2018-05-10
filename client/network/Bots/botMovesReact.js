@@ -32,6 +32,7 @@ function crossMove(board){
 }
 
 function naughtMove(board){
+  console.log('board at naughtMove: ', board)
       if(attack('naught', board)){
         return attack('naught', board)
       }
@@ -45,7 +46,7 @@ function naughtMove(board){
           return smartMove('cross', board)
         }
         else if(board[4].teamName == 'none'){
-          board[4].teamName = 'naught'  
+          board[4].teamName = 'naught'
         }
       else {
         for (var i = 0; i < board.length; i++) {

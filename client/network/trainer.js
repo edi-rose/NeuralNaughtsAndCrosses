@@ -3,7 +3,7 @@ const crossMove = require('./Bots/botMovesReact').crossMove
 const naughtMove = require('./Bots/botMovesReact').naughtMove
 const makeInput = require('./helpers/boardToInput')
 const getSquare = require('./helpers/getSquare')
-const saveNetwork = require('../api')
+const saveNetwork = require('../api.js').saveNetwork
 
 function trainNetwork(network, team, board){
   console.log('board: ', makeInput(board))
@@ -14,10 +14,13 @@ function trainNetwork(network, team, board){
 }
 
 function getOutput(team, board){
+  console.log(board)
   if(team == 'cross'){
+    console.log(crossMove(board))
     return getSquare(crossMove(board))
   }
   else if(team == 'naught'){
+    console.log(naughtMove(board))
     return  getSquare(naughtMove(board))
   }
   else {
