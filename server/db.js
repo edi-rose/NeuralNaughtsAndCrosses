@@ -21,12 +21,14 @@ function getNaught(){
   return connection('naughtNetwork').where('id', 1)
 }
 
+//saves the db for the crossNetwork
 function saveCross(json){
   const db = connection
   return connection('crossNetwork')
     .insert({'crossNetwork': JSON.stringify(json.json)}).where('id', 1)
 }
 
+//saves the db for the naughtNetwork
 function saveNaught(json){
   const db = connection
   return connection('naughtNetwork')

@@ -76,6 +76,7 @@ class Board extends React.Component{
   return chosen
   }
   claimSquare(cell, team){
+    console.log('claim square : team: ', team)
     const {grid} = this.state
     let found
     grid.forEach(row => row.forEach(c => {
@@ -126,9 +127,12 @@ class Board extends React.Component{
     }
   }
   handleNetwork(data, team, board ){
+    console.log('handleNetwork called')
     this.setState({
       moveList: getNetworkReccomendation(JSON.parse(data), team, board)
     })
+    console.log('state set')
+    console.log(this.state.moveList)
     return true
   }
   componentWillMount(){

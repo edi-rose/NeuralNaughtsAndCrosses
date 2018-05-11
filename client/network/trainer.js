@@ -6,7 +6,6 @@ const getSquare = require('./helpers/getSquare')
 const saveNetwork = require('../api.js').saveNetwork
 
 function trainNetwork(network, team, board){
-  console.log('board: ', makeInput(board))
   let output = getOutput(team, board)
   network.train(([{input: makeInput(board), output: output}]))
   let json = network.toJSON()
@@ -14,12 +13,12 @@ function trainNetwork(network, team, board){
 }
 
 function getOutput(team, board){
-  console.log(board)
   if(team == 'cross'){
     console.log(crossMove(board))
     return getSquare(crossMove(board))
   }
   else if(team == 'naught'){
+    console.log('board at trainer: ', board)
     console.log(naughtMove(board))
     return  getSquare(naughtMove(board))
   }
