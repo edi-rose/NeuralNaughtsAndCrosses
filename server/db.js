@@ -12,13 +12,13 @@ function addBoard(board){
 //queries the db for the crossNetwork
 function getCross(){
   const db = connection
-  return connection('crossNetwork').where('id', 1)
+  return connection('crossNetwork').orderBy('id', 'desc').first()
 }
 
 //queries the db for the naughtNetwork
 function getNaught(){
   const db = connection
-  return connection('naughtNetwork').where('id', 1)
+  return connection('naughtNetwork').orderBy('id', 'desc').first()
 }
 
 //saves the db for the crossNetwork

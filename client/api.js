@@ -40,28 +40,24 @@ function saveNetwork(json, team){
 //makes a get request for reccomendations from the networks
 function getNetwork(callback, team, board) {
   if(team == 'cross'){
-    console.log('cross')
     request
       .get('/cross')
       .then((data, err) => {
         if(err) {
           console.log(err)
-          callback(err)
         } else {
-          return callback(data.body[0].crossNetwork, team, board)
+          return callback(data.body.crossNetwork, team, board)
         }
       })
   }
   else {
-    console.log('naught')
     request
       .get('/naught')
       .then((data, err) => {
         if(err) {
           console.log(err)
-          callback(err)
         } else {
-          return callback(data.body[0].naughtNetwork, team, board)
+          return callback(data.body.naughtNetwork, team, board)
         }
       })
   }
