@@ -2,10 +2,8 @@
 
 //REVISIT UNTESTED
 
-var board = require('./boardArray.js')
-
-function checkForWin(team){
-  var taken = getTeam(team)
+function checkForWin(team, board){
+  var taken = getTeam(team, board)
   if (checkRows(taken)
   ||checkCollumns(taken)
   ||checkDiagonals(taken)){
@@ -69,7 +67,7 @@ function checkDiagonal2(taken){
 }
 
 //working
-function getTeam(team) {
+function getTeam(team, board) {
   return board.filter(x => x.teamName == team)
 }
 

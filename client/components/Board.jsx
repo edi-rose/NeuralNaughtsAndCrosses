@@ -99,25 +99,26 @@ class Board extends React.Component{
     if (this.state.userPaused) return
     if (cell.teamName !== 'none') return
     this.claimSquare(cell, userTeam)
+    this.checkWins(concatBoard(this.state.grid))
     setTimeout(() => {
+      if(this.state.gameOver) return
       var {grid} = this.state
       this.claimSquare(this.getCell(), botTeam)
-      this.checkWins()
       saveBoard(this.state.grid)
-      this.checkWins()
+      this.checkWins(concatBoard(this.state.grid))
       getNetwork(this.handleNetwork, botTeam, concatBoard(this.state.grid))
     }, 2000)
     saveBoard(this.state.grid)
-    this.checkWins()
   }
-  checkWins(){
-    if(checkForWin('cross')){
+  checkWins(board){
+    console.log('check Wins')
+    if(checkForWin('cross', board)){
         this.setState({
           crossesScore: this.state.crossesScore + 1,
           gameOver:true
         })
       }
-    if(checkForWin('naught')){
+    if(checkForWin('naught', board)){
         this.setState({
           naughtsScore: this.state.naughtsScore + 1,
           gameOver:true
@@ -132,9 +133,6 @@ class Board extends React.Component{
   }
   componentWillMount(){
      getNetwork(this.handleNetwork, botTeam, concatBoard(this.state.grid))
-     this.setState({
-
-     })
   }
   render() {
     return (

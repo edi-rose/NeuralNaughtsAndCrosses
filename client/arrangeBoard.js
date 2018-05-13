@@ -10,6 +10,7 @@ function arrangeBoard(board){
 }
 
 function concatBoard(board){
+  console.log(board)
     let newBoard = board[0].concat(board[1], board[2])
     return newBoard
 }
