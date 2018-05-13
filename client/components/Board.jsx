@@ -63,7 +63,6 @@ class Board extends React.Component{
   }
   getCell(){
     let options = this.state.moveList
-    console.log('moveList: ', this.state.moveList)
     let chosen = null
     const {grid} = this.state
     for (var i = 0; i < options.length; i++) {
@@ -76,7 +75,6 @@ class Board extends React.Component{
   return chosen
   }
   claimSquare(cell, team){
-    console.log('claim square : team: ', team)
     const {grid} = this.state
     let found
     grid.forEach(row => row.forEach(c => {
@@ -127,16 +125,16 @@ class Board extends React.Component{
     }
   }
   handleNetwork(data, team, board ){
-    console.log('handleNetwork called')
     this.setState({
       moveList: getNetworkReccomendation(JSON.parse(data), team, board)
     })
-    console.log('state set')
-    console.log(this.state.moveList)
     return true
   }
   componentWillMount(){
      getNetwork(this.handleNetwork, botTeam, concatBoard(this.state.grid))
+     this.setState({
+
+     })
   }
   render() {
     return (

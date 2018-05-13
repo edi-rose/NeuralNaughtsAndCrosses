@@ -13,13 +13,13 @@ function trainNetwork(network, team, board){
 }
 
 function getOutput(team, board){
+  if(crossMove(board) == undefined || naughtMove(board) == undefined){
+    return 1
+  }
   if(team == 'cross'){
-    console.log(crossMove(board))
     return getSquare(crossMove(board))
   }
   else if(team == 'naught'){
-    console.log('board at trainer: ', board)
-    console.log(naughtMove(board))
     return  getSquare(naughtMove(board))
   }
   else {

@@ -22,7 +22,6 @@ function saveNetwork(json, team){
     })
   }
   else if(team =='naught'){
-    console.log('saveNetwork: ', json)
     request
     .post('/naught')
     .send({json})

@@ -6,7 +6,6 @@ var getCross = require('../db').getCross
 //makes a request to the database for the cross network then return it to the api
 router.get('/', (req, res) => {
     getCross().then((data) => {
-      console.log(data)
       res.json(data)
   })
 })

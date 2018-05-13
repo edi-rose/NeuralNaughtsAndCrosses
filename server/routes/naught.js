@@ -6,7 +6,6 @@ var getNaught = require('../db').getNaught
 //makes a request to the database for the cross network then return it to the api
 router.get('/', (req, res) => {
     getNaught().then((data) => {
-      console.log('route', data)
       res.json(data)
   })
 })
