@@ -100,8 +100,8 @@ class Board extends React.Component{
     if (cell.teamName !== 'none') return
     this.claimSquare(cell, userTeam)
     this.checkWins(concatBoard(this.state.grid))
-    setTimeout(() => {
       if(this.state.gameOver) return
+    setTimeout(() => {
       var {grid} = this.state
       this.claimSquare(this.getCell(), botTeam)
       saveBoard(this.state.grid)
