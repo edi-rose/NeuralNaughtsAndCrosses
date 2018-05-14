@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 //makes a post request to the db for the crossNetwork
 router.post('/', (req, res) => {
-  saveNetwork(req.body)
+  saveCross(req.body)
   .then(networkId => {
     res.json({networkId})
     })
