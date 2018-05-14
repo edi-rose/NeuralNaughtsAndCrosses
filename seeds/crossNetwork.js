@@ -1,4 +1,4 @@
-const crossJson = require('../network/crossNetwork.json')
+const crossJson = require('./untrainedNetwork.json')
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries

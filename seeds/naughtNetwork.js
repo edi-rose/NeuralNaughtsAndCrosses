@@ -1,4 +1,4 @@
-const naughtJson = require('../network/naughtNetwork.json')
+const naughtJson = require('./untrainedNetwork.json')
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries

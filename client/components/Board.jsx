@@ -111,7 +111,6 @@ class Board extends React.Component{
     saveBoard(this.state.grid)
   }
   checkWins(board){
-    console.log('check Wins')
     if(checkForWin('cross', board)){
         this.setState({
           crossesScore: this.state.crossesScore + 1,
