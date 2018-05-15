@@ -22,8 +22,7 @@ function checkCollumns(taken){
 }
 
 function checkCol(col, taken){
-  var count = 0
-  taken.filter(x => x.col == col).forEach(x => count ++)
+  var count = taken.filter(x => x.col == col).length
   return countCheck(count)
 }
 
@@ -37,8 +36,7 @@ function checkRows(taken){
 }
 
 function checkRow(row, taken) {
-  var count = 0
-  taken.filter(x => x.row == row).forEach(x => count ++)
+  var count = taken.filter(x => x.row == row).length
   return countCheck(count)
 }
 
