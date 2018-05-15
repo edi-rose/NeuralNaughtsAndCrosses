@@ -8,7 +8,7 @@ const saveNetwork = require('../api.js').saveNetwork
 function trainNetwork(network, team, board){
   let output = getOutput(team, board)
   network.train(([{input: makeInput(board), output: output}]), {
-    iterations:2000
+    iterations:40000
   })
   let json = network.toJSON()
   saveNetwork(json, team)
