@@ -42,28 +42,16 @@ function checkRow(row, taken) {
   return countCheck(count)
 }
 
-function checkDiagonals(taken){
-  if(checkDiagonal1(taken)||checkDiagonal2(taken)){
-    return true
-  }
-    return false
-}
-
 //board[2] == topRight
 //board[4] == midMid
 //board[6] == botLeft
-function checkDiagonal1(taken){
-  var count = 0
-   taken.filter(x => x == board[2] || x == board[4] || x == board[6]).forEach(x => count ++)
-  return countCheck(count)
-}
-//board[0]
-//board[4]
-//board[8]
-function checkDiagonal2(taken){
-  var count = 0
-  taken.filter(x => x == board[0] || x == board[4] || x == board[8]).forEach(x => count ++)
- return countCheck(count)
+
+function checkDiagonals(taken){
+  var d1= taken.filter(x => x.D1 == true).length
+  var d2= taken.filter(x => x.D2 == true).length
+  if(countCheck(d1) || countCheck(d2)){
+    return true
+  }
 }
 
 //working

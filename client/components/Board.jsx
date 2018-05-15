@@ -102,6 +102,7 @@ class Board extends React.Component{
     this.checkWins(concatBoard(this.state.grid))
       if(this.state.gameOver) return
     setTimeout(() => {
+      if(this.state.gameOver) return
       var {grid} = this.state
       this.claimSquare(this.getCell(), botTeam)
       saveBoard(this.state.grid)
