@@ -140,12 +140,12 @@ class Board extends React.Component{
         <div className="game">
         <table className='board'>
         <tbody>
-          {this.state.grid && this.state.grid.map((row) => {
+          {this.state.grid && this.state.grid.map((row, idx) => {
             return (
-              <tr className='board'>
-                {row.map((cell) => {
-                  return <td onClick={() => this.userClick(cell)} className='boardMain'>
-                    <div className= 'token'>{(token(cell.teamName))}</div>
+              <tr key={idx} className='board'>
+                {row.map((cell, idx) => {
+                  return <td onClick={() => this.userClick(cell)} key={idx} className='boardMain'>
+                    <div key={idx} className= 'token'>{(token(cell.teamName))}</div>
                   </td>
                 })}
               </tr>
